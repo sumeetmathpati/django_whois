@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<title>whois</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<style type="text/css">
+		
+		body {
+		}
+
+		#main-content {
+			width: 100%;
+		}
+
+		#form {
+			border: 3px solid white;
+			font-size: 24px; 
+		}
+
+
+	</style>
+
+	<body class="w3-orange">
+
+	<!-- 	<div class="w3-container w3-blue">
+		  <h2></h2>
+		</div> -->
+
+		<div class="w3-container w3-display-middle" id="main-content" >
+			<form id="form" method="POST" action="">
+
+				{% csrf_token %}
+				<div>
+					
+				</div>
+			  <input class="w3-input w3-border search-bar w3-orange" type="text" placeholder="Enter domain name" name="domainName" required>
+
+			  <!-- <input type="submit" value="OK" style="width: 100%; margin-top: 20px;"> -->
+			</form>
+
+			<div id="result" class="w3-container">
+				{% for key, value in data.items %}
+					<h6>{{ key }} -> {{ value }}</h6>
+				{% endfor %}
+			</div>
+
+		</div>
+
+		
+
+		
+
+	</body>
+
+</html> 
